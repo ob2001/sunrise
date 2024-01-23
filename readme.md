@@ -91,4 +91,4 @@ where:
 - $h$ is the amount of time in a day on the planet (24 hours for Earth)
 
 One could instead calculate the fraction or percentage of the day that has light:
-$$\tau_{frac}=\frac{2\omega_o}{360\degree}\left(100\%\right)$$
+$$\tau_{frac}=\frac{2\omega_o}{360\degree}\left(\cdot100\%\right)$$
