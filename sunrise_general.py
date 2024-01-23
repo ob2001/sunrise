@@ -1,5 +1,4 @@
 from math import sin, cos, asin, acos, sqrt, radians, degrees
-import matplotlib.pyplot as plt
 
 def calc_day_len(n_d, lat, long, ax, e, days_per_year, a, debug = False):
     # Mean stellar time

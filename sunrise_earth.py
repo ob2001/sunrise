@@ -1,7 +1,6 @@
 from math import sin, ceil, degrees, cos, asin, acos, radians, sqrt
 from datetime import datetime
 import geocoder
-import matplotlib.pyplot as plt
 
 def calc_day_len(date, lat, long, ax, e):
     # Calculate number of days since Jan 1st, 2000 12:00
