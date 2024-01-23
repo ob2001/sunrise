@@ -2,7 +2,7 @@ from math import sin, cos, asin, acos, sqrt, radians, degrees
 import matplotlib.pyplot as plt
 
 def calc_day_len(n_d, lat, long, ax, e, days_per_year):
-    # Mean solar time
+    # Mean stellar time
     J_star = n_d - long/360
     print(f"Mean solar time: J* = {J_star}")
 
@@ -21,7 +21,7 @@ def calc_day_len(n_d, lat, long, ax, e, days_per_year):
     lam = (M + C) % 360
     print(f"Ecliptic longitude: lambda = {lam}\u00b0")
 
-    # Declination of the Sun
+    # Declination of the Star
     sin_del = sin(radians(lam))*sin(radians(ax))
     print(f"Declination: delta = {degrees(asin(sin_del))}\u00b0")
 
@@ -32,11 +32,9 @@ def calc_day_len(n_d, lat, long, ax, e, days_per_year):
     return 2*100*degrees(acos(cos_wo))/360
 
 # Current Julian day
-days = 90
-lat = 45.
-long = 0.
-axial_tilt = 23.4397
-eccentricity = 0.01671
-days_per_year = 365.25
-
-print(f"Day length (percent of day): tau = {calc_day_len(days, lat, long, axial_tilt, eccentricity, days_per_year)}%")
+lat = 45.           # Observer's planetary latitude
+long = 0.           # Observer's planetary longitude
+axial_tilt = 45     # Tilt of planet's rotational axis relative to orbital plane
+eccentricity = 0    # Eccentricity of planet's orbit
+days_per_year = 100
+stellar_angle = -0.833   # Angle from stellar centre to upper arm
