@@ -1,13 +1,13 @@
 Source: [Sunrise Equation](https://en.wikipedia.org/wiki/Sunrise_equation)
 
 # Explanation of Algorithm for Earth
-## Calculate current Julian day
+## Calculate the current Julian day
 $$n=\lceil J_{date}-2451545.0+0.0008\rceil$$
 
 where:
 - $n$ is the number of days since Jan 1st, 2000 12:00
 - $J_{date}$ is the Julian date
-- 2451545.0 is the number of Julian days from the beginning of Julian calendar to Jan 1st, 2000, 12:00. 0.0008 is the fractional Julian Day for leap seconds and terrestrial time
+- 2451545.0 is the number of Julian days from the beginning of the Julian calendar to Jan 1st, 2000, 12:00. 0.0008 is the fractional Julian Day for leap seconds and terrestrial time
 
 ## Mean solar time
 $$J^*=n-\frac{l_w}{360\degree}$$
@@ -62,7 +62,7 @@ where:
 
 ## Equation of the center
 $$C=a_0\sin{M}+a_1\sin{2M}+a_2\sin(M)$$
-This is a truncation of the periodic series where the coefficients are calculated as follows:
+This is a truncation of the periodic series expansion with the coefficients calculated as follows:
 - $a_0=\arcsin{\left(2e-\frac{1}{4}e^3+\frac{5}{96}e^5+\frac{107}{4608}e^7\right)}$
 - $a_1=\arcsin{\left(\frac{5}{4}e^2-\frac{11}{24}e^4+\frac{17}{192}e^2\right)}$
 - $a_2=\arcsin{\left(\frac{13}{12}e^3-\frac{43}{64}e^5+\frac{95}{512}e^7\right)}$
@@ -86,6 +86,9 @@ where:
 - $a$ is the altitude angle from the sun's center to its upper arm. ($-0.833\degree$)
 
 ## Duration from sunrise to sunset
-$$\tau=2\frac{h}{360\degree}\omega_o$$
+$$\tau=\frac{2\omega_o}{360\degree}h$$
 where:
-- $h$ is the amount of time in a day on the planet ($24h$ for Earth)
+- $h$ is the amount of time in a day on the planet (24 hours for Earth)
+
+One could instead calculate the fraction or percentage of the day that has light:
+$$\tau_{frac}=\frac{2\omega_o}{360\degree}\left(100\%\right)$$
