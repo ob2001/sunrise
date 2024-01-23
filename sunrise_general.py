@@ -27,6 +27,7 @@ def calc_day_len(n_d, lat, long, ax, e, days_per_year, a, debug = False):
 
     # Hour angle
     cos_wo = (sin(radians(a)) - sin(radians(lat))*sin_del)/(cos(radians(lat))*cos(asin(sin_del)))
+
     if debug:
         print(f"Mean stellar time: J* = {J_star}")
         print(f"Mean stellar anomaly: M = {M % 360}\u00b0")
@@ -35,7 +36,12 @@ def calc_day_len(n_d, lat, long, ax, e, days_per_year, a, debug = False):
         print(f"Declination of the Star: delta = {degrees(asin(sin_del))}\u00b0")
         print(f"Hour angle: w0 = {degrees(acos(cos_wo))}\u00b0")
 
-    return 2*100*degrees(acos(cos_wo))/360
+    if cos_wo > 1:
+        return 0
+    elif cos_wo < -1:
+        return 100
+    else:
+        return 2*100*degrees(acos(cos_wo))/360
 
 # Current Julian day
 lat = 45.           # Observer's planetary latitude
