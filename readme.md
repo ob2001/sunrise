@@ -1,4 +1,4 @@
-Source: [Sunrise Equation](https://en.wikipedia.org/wiki/Sunrise_equation)
+Source for Earth-specific algorithm: [Sunrise Equation](https://en.wikipedia.org/wiki/Sunrise_equation)
 
 # Explanation of Algorithm for Earth
 ## Calculate the current Julian day
