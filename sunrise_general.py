@@ -1,7 +1,7 @@
 from math import sin, cos, asin, acos, sqrt, radians, degrees
 import matplotlib.pyplot as plt
 
-def calc_day_len(n_d, lat, long, ax, e, days_per_year):
+def calc_day_len(n_d, lat, long, ax, e, days_per_year, a, debug = False):
     # Mean stellar time
     J_star = n_d - long/360
     print(f"Mean solar time: J* = {J_star}")
@@ -26,8 +26,14 @@ def calc_day_len(n_d, lat, long, ax, e, days_per_year):
     print(f"Declination: delta = {degrees(asin(sin_del))}\u00b0")
 
     # Hour angle
-    cos_wo = (sin(-radians(0.833)) - sin(radians(lat))*sin_del)/(cos(radians(lat))*cos(asin(sin_del)))
-    print(f"Hour angle: w0 = {degrees(acos(cos_wo))}\u00b0")
+    cos_wo = (sin(radians(a)) - sin(radians(lat))*sin_del)/(cos(radians(lat))*cos(asin(sin_del)))
+    if debug:
+        print(f"Mean stellar time: J* = {J_star}")
+        print(f"Mean stellar anomaly: M = {M % 360}\u00b0")
+        print(f"Equation of center: C = {C}\u00b0")
+        print(f"Ecliptic longitude: lambda = {lam}\u00b0")
+        print(f"Declination of the Star: delta = {degrees(asin(sin_del))}\u00b0")
+        print(f"Hour angle: w0 = {degrees(acos(cos_wo))}\u00b0")
 
     return 2*100*degrees(acos(cos_wo))/360
 
