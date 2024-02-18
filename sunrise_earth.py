@@ -37,7 +37,7 @@ def calc_day_len(date, lat, long, ax, e):
     return 2*24*degrees(acos(cos_wo))/360
 
 # Current Julian day
-date = (datetime.now() - datetime.strptime('01/01/00 12:00:00', '%d/%m/%y %H:%M:%S')).days + 2451545 + 1
+date = (datetime.now() - datetime.strptime('01/01/00 12:00:00', '%d/%m/%y %H:%M:%S')).days + 2451545 - 1
 
 lat, long = geocoder.ip('').latlng
 axial_tilt = 23.4397
