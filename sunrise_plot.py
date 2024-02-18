@@ -56,7 +56,11 @@ X, Y = np.meshgrid(days, lats)
 calcs = calc_day_len(X, Y, axial_tilt, eccentricity, days_in_year, stellar_angle)
 
 fig = plt.figure(figsize=(12, 9))
-ax = fig.add_subplot(111, projection = "3d")
+ax = fig.add_subplot(111, projection = "3d", 
+                     title = f"Axial tilt: $\\theta={axial_tilt}\\degree$\nOrbital Eccentricity: $e={eccentricity}$\nStellar Angle: $\\Sigma={stellar_angle}\\degree$", 
+                     xlabel = "Day of Year", 
+                     ylabel = "Latitude ($\\degree$ from Equator)", 
+                     zlabel = "% Daylight")
 
 ax.plot_surface(X, Y, calcs)
 plt.show()
