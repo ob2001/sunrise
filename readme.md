@@ -52,7 +52,7 @@ $$\tau=2\cdot\frac{24}{360\degree}\omega_o$$
 ## Mean solar time
 $$J^*=n_d-\frac{L}{360\degree}$$
 where:
-- $n_d$ is the number of days
+- $n_d$ is the day number
 - $L$ is the observer's longitude ($-180\degree\le L\lt180\degree$)
 
 ## Solar mean anomaly
@@ -74,6 +74,8 @@ This is a correction to the solar mean anomaly to account for the ellipticity of
 ## Ecliptic longitude
 $$\lambda=\left(M+C\right)\mod{360\degree}$$
 
+We may choose our reference time and coordinate system such that the argument of perihelion/apsis is $0\degree$, thus dropping the correction terms seen in the equation for Earth.
+
 ## Declination of the Sun
 $$\sin{\delta}=\sin{\lambda}\sin{\alpha}$$
 where:
@@ -82,13 +84,13 @@ where:
 ## Hour angle
 $$\cos{\omega_o}=\frac{\sin{a}-\sin{l}\sin{\delta}}{\cos{l}\cos{\delta}}$$
 where:
+- $a$ is the observed angle from the sun's center to its upper arm. ($-0.833\degree$ for Earth)
 - $l$ is the observer's latitude on the planet
-- $a$ is the altitude angle from the sun's center to its upper arm. ($-0.833\degree$)
 
 ## Duration from sunrise to sunset
 $$\tau=\frac{2\omega_o}{360\degree}h$$
 where:
-- $h$ is the amount of time in a day on the planet (24 hours for Earth)
+- $h$ is the amount of time in a day on the planet (~24 hours for Earth)
 
 One could instead calculate the fraction or percentage of the day that has light:
-$$\tau_{frac}=\frac{2\omega_o}{360\degree}\left(\cdot100\%\right)$$
+$$\tau_{frac}=\frac{2\omega_o}{360\degree}\cdot100\%$$
