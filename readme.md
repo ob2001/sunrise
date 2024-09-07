@@ -19,7 +19,9 @@ $$M=\left(357.5291+0.98560028J^*\right)\mod 360$$
 
 ## Equation of the center
 $$C=1.9148\sin{M}+0.0200\sin{2M}+0.0003\sin{3M}$$
+
 with the coefficients deriving from the eccentricity of the orbit $e$ as follows:
+
 $$C=\arcsin{\left(2e+\frac{1}{4}e^3+\frac{5}{96}e^5+\frac{107}{4608}e^7\right)}\sin{M}$$
 
 $$+\arcsin{\left(\frac{5}{4}e^2-\frac{11}{24}e^4+\frac{17}{192}e^6\right)}\sin{2M}$$
